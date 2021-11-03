@@ -1,6 +1,5 @@
 "use strict";
-let randNumber = document.querySelector(".white-num-block").textContent =
-  Math.trunc(Math.random() * 20 + 1);
+let randNumber = Math.trunc(Math.random() * 20 + 1);
   let inpNumber;  
   let startScore =  20;
 
@@ -9,6 +8,7 @@ let randNumber = document.querySelector(".white-num-block").textContent =
     if (inpNumber === randNumber) {
       document.querySelector("body").style.backgroundColor= "green";
       document.querySelector(".text-1").textContent = "😇 You Win!";
+      document.querySelector(".white-num-block").textContent = randNumber;
   } else if (inpNumber > randNumber) {
     document.querySelector(".text-1").textContent = "📈 Too High!";
     startScore--; 
@@ -29,8 +29,7 @@ let randNumber = document.querySelector(".white-num-block").textContent =
 });
 
 document.querySelector(".again-btn").addEventListener("click", function () { 
-  document.querySelector(".white-num-block").textContent =
-  Math.trunc(Math.random() * 20 + 1)
+  randNumber = Math.trunc(Math.random() * 20 + 1)
   document.querySelector("body").style.backgroundColor= "rgb(85, 82, 82)";
   document.querySelector(".inpnum").value = "";
   document.querySelector(".text-1").textContent = "START GUESSING";
